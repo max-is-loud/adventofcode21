@@ -13,19 +13,19 @@ def process_instructions(data):
     return instructions
 
 def process_commands(cmd):
-#part 1 solution
-horz = 0
-dpth = 0
-for x in cmd:
-    print(horz)
-    print(dpth)
-    if x[0] == 'forward':
-        horz += int(x[1])
-    elif x[0] == 'down':
-        dpth += int(x[1])
-    elif x[0] == 'up':
-        dpth -= int(x[1])
-print(horz * dpth)
+    #part 1 solution
+    horz = 0
+    dpth = 0
+    for x in cmd:
+        print(horz)
+        print(dpth)
+        if x[0] == 'forward':
+            horz += int(x[1])
+        elif x[0] == 'down':
+            dpth += int(x[1])
+        elif x[0] == 'up':
+            dpth -= int(x[1])
+    print(horz * dpth)
 
 def aim_change(dir,amt, aim):
     aim = aim
