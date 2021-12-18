@@ -1,17 +1,20 @@
 def process_data(filename):
     with open(filename, 'r') as f:
-        return f.read().splitlines()
+        data = []
+        for i in f.read().splitlines():
+            data.append(int(i))
+        return data     
 
-def sonar_input(input):
+def sonar_sweep(input):
     count = 0
-    x = int(input[0])
+    x = input[0]
     for m in input:
-        if int(m) > x:
+        if m > x:
             count += 1
-            x = int(m)
+            x = m
         else:
-            x = int(m)
+            x = m
     print(count)
 
-process_data('/d1_input.txt')
-sonar_input(data)
+data = process_data('./d1_input.txt')
+sonar_sweep(data)
