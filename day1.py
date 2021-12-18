@@ -5,16 +5,32 @@ def process_data(filename):
             data.append(int(i))
         return data     
 
-def sonar_sweep(input):
+def depth_increases(input):
     count = 0
-    x = input[0]
-    for m in input:
-        if m > x:
+    last = input[0]
+    for num in input:
+        if num > last:
             count += 1
-            x = m
+            last = num
         else:
-            x = m
+            last = num
     print(count)
 
+def sonar_sums(input, output=None):
+    if output == None:
+        output = list()
+    if len(input) < 3:
+        return output
+    else:
+        output.append(sum(input[:3]))
+        input.pop(0)
+        return sonar_sums(input, output) 
+
 data = process_data('./d1_input.txt')
-sonar_sweep(data)
+
+sum_list = sonar_sums(data)
+depth_increases(sum_list)
+
+
+
+
